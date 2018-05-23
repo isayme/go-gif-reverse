@@ -5,9 +5,13 @@ Reverse Animated GIF.
 
 ```shell
 > gifr -h
-usage: gifr -f path/to/source.gif [-o path/to/dest.gif]
-    -h show help
-    -v show vesion
+Usage of gifr:
+  -f string
+    	specify source gif file
+  -h	show help
+  -o string
+    	specify dest gif file
+  -v	show version
 ```
 
 # Example
