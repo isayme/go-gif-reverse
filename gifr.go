@@ -13,12 +13,6 @@ var commitHash = "unknown"
 
 var defaultDestGifPath = "./out.gif"
 
-func usage() {
-	fmt.Println("usage: gifr -f path/to/source.gif [-o path/to/dest.gif]")
-	fmt.Println("\t-h show help")
-	fmt.Println("\t-v show vesion")
-}
-
 func main() {
 	var sourceFilePath, destFilePath string
 	var showVersion, showHelp bool
@@ -36,12 +30,12 @@ func main() {
 	}
 
 	if showHelp {
-		usage()
+		flag.Usage()
 		os.Exit(0)
 	}
 
 	if sourceFilePath == "" {
-		usage()
+		flag.Usage()
 		os.Exit(1)
 	}
 
