@@ -4,7 +4,7 @@ Reverse Animated GIF.
 ## Usage
 
 ```shell
-> gifr -h
+# gifr -h
 Usage of gifr:
   -f string
     	specify source gif file
