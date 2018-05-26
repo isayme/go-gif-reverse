@@ -78,18 +78,6 @@ func main() {
 		sourceGif.Disposal[i], sourceGif.Disposal[j] = sourceGif.Disposal[j], sourceGif.Disposal[i]
 	}
 
-	// delays := make([]int, len(sourceGif.Delay))
-	// for idx, delay := range sourceGif.Delay {
-	// 	delays[len(delays)-1-idx] = delay
-	// }
-	// sourceGif.Delay = delays
-
-	// disposals := make([]byte, len(sourceGif.Disposal))
-	// for idx, disposal := range sourceGif.Disposal {
-	// 	disposals[len(disposals)-1-idx] = disposal
-	// }
-	// sourceGif.Disposal = disposals
-
 	gif.EncodeAll(destFile, sourceGif)
 
 	sourceFile.Close()
