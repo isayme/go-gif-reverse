@@ -47,12 +47,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer sourceFile.Close()
 
 	destFile, err := os.OpenFile(destFilePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0755)
 	if err != nil {
 		panic(err)
 	}
-	destFile.Seek(0, 0)
+	defer destFile.Close()
+
 	sourceGif, err := gif.DecodeAll(sourceFile)
 	if err != nil {
 		panic(err)
@@ -79,7 +81,4 @@ func main() {
 	}
 
 	gif.EncodeAll(destFile, sourceGif)
-
-	sourceFile.Close()
-	destFile.Close()
 }
